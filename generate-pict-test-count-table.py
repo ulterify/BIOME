@@ -33,7 +33,7 @@ def main() -> int:
     parser.add_argument("--iterations", type=int, default=10, help="PICT /b:N seed attempts")
     parser.add_argument("--seed", type=int, default=132, help="PICT /r:N base random seed")
     parser.add_argument("--model", type=Path, default=SCRIPT_DIR / "pict-model.txt", help="base PICT model file")
-    parser.add_argument("--pict-bin", type=Path, default=Path("/home/thomas/source/pict/build/cli/pict"), help="PICT executable")
+    parser.add_argument("--pict-bin", type=Path, default=Path("pict"), help="PICT executable")
     parser.add_argument("--output-dir", type=Path, default=SCRIPT_DIR / "pict-testsets", help="output directory")
     parser.add_argument("--output-file", type=Path, help="explicit table output path")
     parser.add_argument("--plot-file", type=Path, help="explicit SVG plot output path")

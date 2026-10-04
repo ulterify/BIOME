@@ -90,13 +90,8 @@ Install or provide:
 - `gnuplot`, only needed for SVG plot generation from
   `generate-pict-test-count-table.py`
 
-The scripts default to a local PICT binary at:
-
-```text
-/home/thomas/source/pict/build/cli/pict
-```
-
-Use `--pict-bin` if PICT is installed elsewhere.
+The scripts assume the `pict` executable is available in `PATH`. Use
+`--pict-bin` to provide an explicit executable path if needed.
 
 ## Basic Usage
 
