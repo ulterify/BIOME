@@ -18,7 +18,7 @@ combinatorial generation to select a smaller experimental test set that still
 covers many meaningful combinations of inputs. It optimizes the test setup, not
 the soil treatment itself.
 
-The project is currently in the proposal phase. If the budget is approved and
+The project is currently in the proposal phase. If the proposal is approved and
 the experiment proceeds, the PICT model can be amended with more precise
 constraints from the actual test setup, available materials, replication plan,
 greenhouse or field logistics, and sample budget.
