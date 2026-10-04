@@ -1,5 +1,7 @@
 # BIOME
 
+Author: Thomas Stolwijk
+
 **BIOME** stands for **Balanced Input Organizer for Microbiome Experiments**.
 This repository contains a small planning tool for designing feasible soil
 microbiome screening experiments with combinatorial test generation.
