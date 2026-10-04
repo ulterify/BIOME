@@ -1,0 +1,13 @@
+biostimulant_1: yes, no
+biostimulant_2: yes, no
+biostimulant_3: yes, no
+
+antagonist_1: yes, no
+antagonist_2: yes, no
+antagonist_3: yes, no
+
+amendment_1: yes, no
+amendment_2: yes, no
+amendment_3: yes, no
+
+[antagonist_1] = "yes" OR [antagonist_2] = "yes" OR [antagonist_3] = "yes";
