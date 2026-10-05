@@ -25,6 +25,18 @@ the experiment proceeds, the PICT model can be amended with more precise
 constraints from the actual test setup, available materials, replication plan,
 greenhouse or field logistics, and sample budget.
 
+## Scope
+
+BIOME is an experimental design helper. It does not predict microbial response,
+rank treatments, optimise soil health, or decide which additive is biologically
+best. Its role is to organise a large set of possible inputs into a smaller,
+traceable set of treatment combinations for laboratory or field testing.
+
+The generated rows should be treated as candidate treatment combinations. Final
+sample counts still need to include biological replication, controls,
+randomisation, blocking, extraction batches, sequencing batches, and any
+project-specific quality-control samples.
+
 ## Experimental Design Context
 
 The current model represents each candidate additive as a binary factor:
@@ -95,6 +107,12 @@ Install or provide:
 The scripts assume the `pict` executable is available in `PATH`. Use
 `--pict-bin` to provide an explicit executable path if needed.
 
+Install Python dependencies with:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
 ## Basic Usage
 
 Show generated max-yes constraints:
@@ -138,6 +156,15 @@ order-3.max-yes-4.tsv
 
 Each row is one proposed treatment combination. Each column is one additive
 factor with value `yes` or `no`.
+
+Example rows from `pict-testsets/order-3.max-yes-4.tsv`:
+
+```text
+biostimulant_1  biostimulant_2  biostimulant_3  antagonist_1  antagonist_2  antagonist_3  amendment_1  amendment_2  amendment_3
+yes             no              no              yes           no            no            yes          yes          no
+no              yes             yes             no            yes           no            no           no           yes
+no              no              no              yes           no            no            yes          yes          yes
+```
 
 Count-table runs produce files named like:
 
@@ -198,6 +225,17 @@ Then generate the selected design:
 ```bash
 ./generate-pict-testsets.py --max-yes 4 --order 3
 ```
+
+## Reproducibility
+
+PICT can generate different valid covering arrays depending on its random seed
+and search settings. Record the exact model file, command, `--seed`,
+`--iterations`, selected `--order`, selected `--max-yes`, PICT version, and
+generated TSV file used for the final experiment.
+
+The default scripts use `--seed 132` and `--iterations 10`. If those values are
+changed while exploring designs, include the final values in the proposal or
+experiment log.
 
 ## Notes
 
